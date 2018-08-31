@@ -23,9 +23,10 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             let button = UIButton(type: .system)
             button.backgroundColor = .green
             button.frame = CGRect(x: 16, y: 116, width: view.frame.width - 32, height: 50)
-            button.setTitle("Invite Friends", for: .normal)
+            button.setTitle("Display Friends Info", for: .normal)
             button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
             button.setTitleColor(.white, for: .normal)
+            button.addTarget(self, action: #selector(displayFriendsInfo), for: .touchUpInside)
             return button
         }()
         
@@ -38,11 +39,22 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         fbLoginButton.loginBehavior = .web
     }
     
+    @objc func displayFriendsInfo() {
+        
+        FBSDKGraphRequest(graphPath: "/me/friends", parameters: ["fields": "picture.width(250).height(250), id, first_name, last_name, name"]).start(completionHandler: { (connection, result, error) in
+            
+            if error != nil {
+                print("Failed to start graph request:", error!)
+                return
+            }
+            
+            let data = result as! [String: Any]
+            print(data)
+        })
+    }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
-        //FBSDKAccessToken.setCurrent(nil)
-        //FBSDKProfile.setCurrent(nil)
+
         print("Did log out of Facebook")
     }
     
@@ -62,17 +74,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
     
             print(result!)
-            
-            FBSDKGraphRequest(graphPath: "/me/friends", parameters: ["fields": "id, first_name, last_name, name"]).start(completionHandler: { (connection, result, error) in
-                
-                if error != nil {
-                    print("Failed to start graph request:", error!)
-                    return
-                }
-                
-                let data = result as! [String: Any]
-                print(data)
-            })
         }
     }
     
