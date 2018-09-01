@@ -7,9 +7,7 @@
 //
 
 import Foundation
-import FBSDKLoginKit
 import FBSDKShareKit
-import FBSDKCoreKit
 
 public class FacebookSDK {
 

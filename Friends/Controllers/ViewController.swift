@@ -17,6 +17,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        //MARK: - INIT BUTTONS -
+        
         let fbLoginButton = FBSDKLoginButton()
         let displayFriendsInfoButton: UIButton =  {
         
@@ -29,20 +31,28 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             button.addTarget(self, action: #selector(displayFriendsInfo), for: .touchUpInside)
             return button
         }()
-        
         fbLoginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
+        
+        //MARK: - ADD SUBVIEWS -
+        
         view.addSubview(fbLoginButton)
         view.addSubview(displayFriendsInfoButton)
+        
+        //MARK: - OTHER SETTINGS -
         
         fbLoginButton.delegate = self
         fbLoginButton.readPermissions = ["email", "user_friends", "public_profile"]
         fbLoginButton.loginBehavior = .web
     }
     
+    //MARK: - Display Info Methods -
+    
     @objc func displayFriendsInfo() {
         
         FacebookSDK.request(path: "/me/friends", parameters: ["fields": "picture.width(250).height(250), id, first_name, last_name, name"])
     }
+    
+    //MARK: - Facebook Authentification Methods -
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
 
@@ -58,11 +68,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         print("Successfully logged in with facebook")
         FacebookSDK.request(path: "/me", parameters: ["fields": "id, name, email"])
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 
