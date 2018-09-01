@@ -18,7 +18,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
        
         let fbLoginButton = FBSDKLoginButton()
-        let inviteFriendsbutton: UIButton =  {
+        let displayFriendsInfoButton: UIButton =  {
         
             let button = UIButton(type: .system)
             button.backgroundColor = .green
@@ -32,7 +32,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         fbLoginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
         view.addSubview(fbLoginButton)
-        view.addSubview(inviteFriendsbutton)
+        view.addSubview(displayFriendsInfoButton)
         
         fbLoginButton.delegate = self
         fbLoginButton.readPermissions = ["email", "user_friends", "public_profile"]
@@ -41,16 +41,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @objc func displayFriendsInfo() {
         
-        FBSDKGraphRequest(graphPath: "/me/friends", parameters: ["fields": "picture.width(250).height(250), id, first_name, last_name, name"]).start(completionHandler: { (connection, result, error) in
-            
-            if error != nil {
-                print("Failed to start graph request:", error!)
-                return
-            }
-            
-            let data = result as! [String: Any]
-            print(data)
-        })
+        FacebookSDK.request(path: "/me/friends", parameters: ["fields": "picture.width(250).height(250), id, first_name, last_name, name"])
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -58,7 +49,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         print("Did log out of Facebook")
     }
     
-    func loginButton(_ logeeeeeeeeeeeeeeeeeeeeeeereeeeeeeeeeeeeeeinButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         
         if error != nil {
             print(error)
@@ -66,15 +57,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         
         print("Successfully logged in with facebook")
-        FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email"]).start { (connection, result, error) in
-            
-            if error != nil {
-                print("Failed to start graph request:", error!)
-                return
-            }
-    
-            print(result!)
-        }
+        FacebookSDK.request(path: "/me", parameters: ["fields": "id, name, email"])
     }
     
     override func didReceiveMemoryWarning() {

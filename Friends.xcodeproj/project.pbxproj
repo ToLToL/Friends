@@ -13,6 +13,7 @@
 		811A03A62139909C00A2A889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A42139909C00A2A889 /* Main.storyboard */; };
 		811A03A82139909D00A2A889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A72139909D00A2A889 /* Assets.xcassets */; };
 		811A03AB2139909D00A2A889 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A92139909D00A2A889 /* LaunchScreen.storyboard */; };
+		81F5B41B2139D48E00E157D6 /* GraphRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5B41A2139D48E00E157D6 /* GraphRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		811A03AA2139909D00A2A889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		811A03AC2139909D00A2A889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811A03B221399E3D00A2A889 /* Friends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Friends.entitlements; sourceTree = "<group>"; };
+		81F5B41A2139D48E00E157D6 /* GraphRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRequest.swift; sourceTree = "<group>"; };
 		96AA5E45F41882018CFBE6C6 /* Pods-Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friends.debug.xcconfig"; path = "Target Support Files/Pods-Friends/Pods-Friends.debug.xcconfig"; sourceTree = "<group>"; };
 		F032028D641C8859A4A26ED6 /* Pods-Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friends.release.xcconfig"; path = "Target Support Files/Pods-Friends/Pods-Friends.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,15 +72,48 @@
 		811A039F2139909C00A2A889 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				811A03B221399E3D00A2A889 /* Friends.entitlements */,
-				811A03A02139909C00A2A889 /* AppDelegate.swift */,
-				811A03A22139909C00A2A889 /* ViewController.swift */,
-				811A03A42139909C00A2A889 /* Main.storyboard */,
 				811A03A72139909D00A2A889 /* Assets.xcassets */,
-				811A03A92139909D00A2A889 /* LaunchScreen.storyboard */,
+				811A03B221399E3D00A2A889 /* Friends.entitlements */,
 				811A03AC2139909D00A2A889 /* Info.plist */,
+				81F5B4172139D42200E157D6 /* Models */,
+				81F5B4182139D43100E157D6 /* Views */,
+				81F5B41C2139D4A200E157D6 /* Controllers */,
 			);
 			path = Friends;
+			sourceTree = "<group>";
+		};
+		81F5B4172139D42200E157D6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				81F5B4192139D47500E157D6 /* FacebookSDK */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		81F5B4182139D43100E157D6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				811A03A42139909C00A2A889 /* Main.storyboard */,
+				811A03A92139909D00A2A889 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		81F5B4192139D47500E157D6 /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				81F5B41A2139D48E00E157D6 /* GraphRequest.swift */,
+			);
+			path = FacebookSDK;
+			sourceTree = "<group>";
+		};
+		81F5B41C2139D4A200E157D6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				811A03A02139909C00A2A889 /* AppDelegate.swift */,
+				811A03A22139909C00A2A889 /* ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		BDDE2730F03291942A8B8591 /* Pods */ = {
@@ -214,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				811A03A32139909C00A2A889 /* ViewController.swift in Sources */,
+				81F5B41B2139D48E00E157D6 /* GraphRequest.swift in Sources */,
 				811A03A12139909C00A2A889 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
