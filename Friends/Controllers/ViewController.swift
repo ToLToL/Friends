@@ -20,6 +20,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         //MARK: - INIT BUTTONS -
         
         let fbLoginButton = FBSDKLoginButton()
+        
+        fbLoginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
+        
         let displayFriendsInfoButton: UIButton =  {
         
             let button = UIButton(type: .system)
@@ -31,12 +34,24 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             button.addTarget(self, action: #selector(displayFriendsInfo), for: .touchUpInside)
             return button
         }()
-        fbLoginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
+        
+        let displayFriendsTabViewButton: UIButton =  {
+            
+            let button = UIButton(type: .system)
+            button.backgroundColor = .green
+            button.frame = CGRect(x: 16, y: 182, width: view.frame.width - 32, height: 50)
+            button.setTitle("Display Friends Tab View", for: .normal)
+            button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+            button.setTitleColor(.black, for: .normal)
+            button.addTarget(self, action: #selector(displayFriendsTabView), for: .touchUpInside)
+            return button
+        }()
         
         //MARK: - ADD SUBVIEWS -
         
         view.addSubview(fbLoginButton)
         view.addSubview(displayFriendsInfoButton)
+        view.addSubview(displayFriendsTabViewButton)
         
         //MARK: - OTHER SETTINGS -
         
@@ -47,9 +62,18 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     //MARK: - Display Info Methods -
     
+    @objc func displayFriendsTabView() {
+        
+        FacebookSDK.request(path: "/me/friends", parameters: ["fields": "picture.width(250).height(250), id, first_name, last_name, name"]) { (result) in
+            print(result)
+        }
+    }
+    
     @objc func displayFriendsInfo() {
         
-        FacebookSDK.request(path: "/me/friends", parameters: ["fields": "picture.width(250).height(250), id, first_name, last_name, name"])
+        FacebookSDK.request(path: "/me/friends", parameters: ["fields": "picture.width(250).height(250), id, first_name, last_name, name"]) { (result) in
+            print(result)
+        }
     }
     
     //MARK: - Facebook Authentification Methods -
@@ -67,7 +91,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         
         print("Successfully logged in with facebook")
-        FacebookSDK.request(path: "/me", parameters: ["fields": "id, name, email"])
+        FacebookSDK.request(path: "/me", parameters: ["fields": "id, name, email"]) { (result) in
+            print(result)
+        }
     }
 }
 

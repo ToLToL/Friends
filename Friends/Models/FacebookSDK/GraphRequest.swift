@@ -11,7 +11,9 @@ import FBSDKShareKit
 
 public class FacebookSDK {
 
-    public static func request(path: String, parameters: [String: Any]) {
+    
+    public static func request(path: String, parameters: [String: Any], completion: @escaping ([String: Any]) -> Void) {
+        
         FBSDKGraphRequest(graphPath: path, parameters: parameters).start(completionHandler: { (connection, result, error) in
             
             if error != nil {
@@ -19,8 +21,7 @@ public class FacebookSDK {
                 return
             }
             
-            let data = result as! [String: Any]
-            print(data)
+            completion(result as! [String: Any])
         })
     }
 }
