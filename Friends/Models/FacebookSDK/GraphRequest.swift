@@ -11,6 +11,8 @@ import FBSDKShareKit
 
 public class FacebookSDK {
 
+    /// Make request to FacebookSDK to retrieve some data
+    /// Can get the result as [String: Any] via the completion closure
     
     public static func request(path: String, parameters: [String: Any], completion: @escaping ([String: Any]) -> Void) {
         
