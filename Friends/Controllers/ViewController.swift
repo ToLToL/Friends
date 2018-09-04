@@ -13,37 +13,46 @@ import FBSDKCoreKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
+    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        facebookLoginButton.delegate = self
+        facebookLoginButton.readPermissions = ["email", "user_friends", "public_profile"]
+        facebookLoginButton.loginBehavior = .web
+        
         //MARK: - INIT BUTTONS -
         
-        let fbLoginButton = FBSDKLoginButton()
+        /*let fbLoginButton = FBSDKLoginButton()
         
         fbLoginButton.frame = CGRect(x: 16, y: 50, width: view.frame.width - 32, height: 50)
         
         let displayFriendsInfoButton: UIButton =  {
         
             let button = UIButton(type: .system)
+            
             button.backgroundColor = .green
             button.frame = CGRect(x: 16, y: 116, width: view.frame.width - 32, height: 50)
             button.setTitle("Display Friends Info", for: .normal)
             button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
             button.setTitleColor(.white, for: .normal)
             button.addTarget(self, action: #selector(displayFriendsInfo), for: .touchUpInside)
+            
             return button
         }()
         
         let displayFriendsTabViewButton: UIButton =  {
             
             let button = UIButton(type: .system)
+            
             button.backgroundColor = .green
             button.frame = CGRect(x: 16, y: 182, width: view.frame.width - 32, height: 50)
             button.setTitle("Display Friends Tab View", for: .normal)
             button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
             button.setTitleColor(.black, for: .normal)
             button.addTarget(self, action: #selector(displayFriendsTabView), for: .touchUpInside)
+            
             return button
         }()
         
@@ -57,7 +66,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         fbLoginButton.delegate = self
         fbLoginButton.readPermissions = ["email", "user_friends", "public_profile"]
-        fbLoginButton.loginBehavior = .web
+        fbLoginButton.loginBehavior = .web*/
     }
     
     //MARK: - Display Info Methods -
