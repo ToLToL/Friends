@@ -11,14 +11,40 @@ import Firebase
 import ContactsUI
 import MessageUI
 
-class LoginViewController: UIViewController, CNContactPickerDelegate {
-    
+class LoginViewController: UIViewController, CNContactPickerDelegate, MFMessageComposeViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     //MARK: - Actions -
+    
+    @IBAction func tappedSendSMS(_ sender: Any) {
+        
+        if (MFMessageComposeViewController.canSendText() &&
+            ContactsList.shared.selectedContactsInfo != nil) {
+            
+            let controller = MFMessageComposeViewController()
+            var phoneNumberList: [String]?
+            
+            for element in ContactsList.shared.selectedContactsInfo! {
+                if phoneNumberList == nil {
+                    phoneNumberList = [element.value]
+                } else {
+                    phoneNumberList?.append(element.value)
+                }
+            }
+            controller.body = "Sent from Friends app"
+            controller.recipients = phoneNumberList
+            controller.messageComposeDelegate = self
+            present(controller, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func tappedShowContactsButton(_ sender: Any) {
         
@@ -48,7 +74,14 @@ class LoginViewController: UIViewController, CNContactPickerDelegate {
         
         print("It cancelled the contact picker view controller when the cancel button is tapped")
     }
+    
+    //MARK: - Send message functions -
 
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     /*override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         // push WelcomeViewController only when the facebookLogginButton is on "Log in" Status
