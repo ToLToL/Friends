@@ -9,10 +9,20 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-
+    
+    @IBOutlet weak var userProfilePicture: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let url = URL(string: User.shared.picture!)
+        let data = try? Data(contentsOf: url!)
+        
+        if let imageData = data {
+            userProfilePicture.image = UIImage(data: imageData)
+        }
+        userName.text = User.shared.name
         // Do any additional setup after loading the view.
     }
 

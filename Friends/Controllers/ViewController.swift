@@ -89,9 +89,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             print(User.shared.picture!)
     
             print(result)
+            self.performSegue(withIdentifier: "pushWelcomeViewController", sender: self)
         }
-        
-        performSegue(withIdentifier: "pushWelcomeViewController", sender: self)
+    
     }
 }
 
