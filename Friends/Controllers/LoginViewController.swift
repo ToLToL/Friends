@@ -11,6 +11,13 @@ import ContactsUI
 
 class LoginViewController: UIViewController, CNContactPickerDelegate {
     
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    //MARK: - Actions -
+    
     @IBAction func tappedShowContactsButton(_ sender: Any) {
         
         let picker = CNContactPickerViewController()
@@ -19,10 +26,12 @@ class LoginViewController: UIViewController, CNContactPickerDelegate {
         present(picker, animated: true, completion: nil)
     }
     
+    //MARK: - Contact picker functions -
+    
     func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
         
         contacts.forEach { (contact) in
-
+            
             let name = contact.givenName + " " + contact.familyName
             print(name)
             
@@ -34,12 +43,6 @@ class LoginViewController: UIViewController, CNContactPickerDelegate {
     func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
         
         print("It cancelled the contact picker view controller when the cancel button is tapped")
-    }
-    
-    override func viewDidLoad() {
-        
-        
-        super.viewDidLoad()
     }
 
     /*override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
