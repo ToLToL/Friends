@@ -45,42 +45,6 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
         </scene>
-        <!--Welcome View Controller-->
-        <scene sceneID="X0e-8e-VT0">
-            <objects>
-                <viewController id="n1O-IZ-yHZ" customClass="WelcomeViewController" customModule="Friends" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZNV-NM-gz1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Login_background" translatesAutoresizingMaskIntoConstraints="NO" id="etU-W9-e29">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bep-1X-gue">
-                                <rect key="frame" x="60" y="106" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIq-Kh-opW">
-                                <rect key="frame" x="102" y="323" width="157" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ulw-LC-ykr"/>
-                    </view>
-                    <connections>
-                        <outlet property="userName" destination="ZIq-Kh-opW" id="ol8-cO-RDw"/>
-                        <outlet property="userProfilePicture" destination="Bep-1X-gue" id="0mJ-Am-pBy"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lFB-mZ-kiq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1060" y="-460"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Friends_app_logo" width="1124" height="699"/>

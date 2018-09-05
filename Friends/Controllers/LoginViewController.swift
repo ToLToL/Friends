@@ -7,7 +7,9 @@
 //
 
 import UIKit
+import Firebase
 import ContactsUI
+import MessageUI
 
 class LoginViewController: UIViewController, CNContactPickerDelegate {
     
@@ -32,11 +34,13 @@ class LoginViewController: UIViewController, CNContactPickerDelegate {
         
         contacts.forEach { (contact) in
             
-            let name = contact.givenName + " " + contact.familyName
-            print(name)
-            
-            let phoneNumber = contact.phoneNumbers[0].value.stringValue
-            print(phoneNumber)
+            if ContactsList.shared.selectedContactsInfo == nil {
+                ContactsList.shared.selectedContactsInfo = [contact.givenName + " " + contact.familyName: contact.phoneNumbers[0].value.stringValue]
+           
+            } else {
+                ContactsList.shared.selectedContactsInfo![contact.givenName + " " + contact.familyName] = contact.phoneNumbers[0].value.stringValue
+           }
+             print(ContactsList.shared.selectedContactsInfo!)
         }
     }
     

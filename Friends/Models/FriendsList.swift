@@ -8,14 +8,11 @@
 
 import Foundation
 
-class User {
+class ContactsList {
     
-    static let shared = User()
+    static let shared = ContactsList()
     
-    var name: String?
-    var email: String?
-    var picture: String?
+    var selectedContactsInfo: [String: String]?
     
     private init() {}
-    
 }

@@ -7,4 +7,6 @@ target 'Friends' do
 
   # Pods for Friends
 
+pod 'Firebase/Core'
+
 end
