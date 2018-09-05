@@ -74,7 +74,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
         
         print("Successfully logged in with facebook")
-        FacebookSDK.request(path: "/me", parameters: ["fields": "id, name, email, picture.width(250).height(250)"]) { (result) in
+        FacebookSDK.request(path: "/me", parameters: ["fields": "picture.width(250).height(250), name, email"]) { (result) in
             
             User.shared.name = result["name"] as? String
             print(User.shared.name!)
@@ -87,7 +87,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                 User.shared.picture = imgData["url"] as? String
             }
             print(User.shared.picture!)
-    
+            
             print(result)
             self.performSegue(withIdentifier: "pushWelcomeViewController", sender: self)
         }
