@@ -7,9 +7,4 @@ target 'Friends' do
 
   # Pods for Friends
 
-pod 'Bolts'
-pod 'FBSDKCoreKit'
-pod 'FBSDKShareKit'
-pod 'FBSDKLoginKit'
-
 end

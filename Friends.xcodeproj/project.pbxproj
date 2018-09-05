@@ -9,21 +9,20 @@
 /* Begin PBXBuildFile section */
 		67457B39EDF4B668A9F57A90 /* Pods_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A7A3631812EB687C974982 /* Pods_Friends.framework */; };
 		811A03A12139909C00A2A889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A03A02139909C00A2A889 /* AppDelegate.swift */; };
-		811A03A32139909C00A2A889 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A03A22139909C00A2A889 /* ViewController.swift */; };
+		811A03A32139909C00A2A889 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A03A22139909C00A2A889 /* LoginViewController.swift */; };
 		811A03A62139909C00A2A889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A42139909C00A2A889 /* Main.storyboard */; };
 		811A03A82139909D00A2A889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A72139909D00A2A889 /* Assets.xcassets */; };
 		811A03AB2139909D00A2A889 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A92139909D00A2A889 /* LaunchScreen.storyboard */; };
 		813EB1B7213F2E4800307271 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813EB1B6213F2E4800307271 /* WelcomeViewController.swift */; };
 		813EB1B9213F3A1500307271 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813EB1B8213F3A1500307271 /* User.swift */; };
 		817852DD213FC50500C7C15D /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817852DC213FC50500C7C15D /* UIImageView+Extensions.swift */; };
-		81F5B41B2139D48E00E157D6 /* GraphRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F5B41A2139D48E00E157D6 /* GraphRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		12A7A3631812EB687C974982 /* Pods_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		811A039D2139909C00A2A889 /* Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		811A03A02139909C00A2A889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		811A03A22139909C00A2A889 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		811A03A22139909C00A2A889 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		811A03A52139909C00A2A889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		811A03A72139909D00A2A889 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		811A03AA2139909D00A2A889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,7 +31,6 @@
 		813EB1B6213F2E4800307271 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		813EB1B8213F3A1500307271 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		817852DC213FC50500C7C15D /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
-		81F5B41A2139D48E00E157D6 /* GraphRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRequest.swift; sourceTree = "<group>"; };
 		96AA5E45F41882018CFBE6C6 /* Pods-Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friends.debug.xcconfig"; path = "Target Support Files/Pods-Friends/Pods-Friends.debug.xcconfig"; sourceTree = "<group>"; };
 		F032028D641C8859A4A26ED6 /* Pods-Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Friends.release.xcconfig"; path = "Target Support Files/Pods-Friends/Pods-Friends.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				813EB1B8213F3A1500307271 /* User.swift */,
-				81F5B4192139D47500E157D6 /* FacebookSDK */,
 				817852DB213FC4E600C7C15D /* Extensions */,
 			);
 			path = Models;
@@ -115,19 +112,11 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		81F5B4192139D47500E157D6 /* FacebookSDK */ = {
-			isa = PBXGroup;
-			children = (
-				81F5B41A2139D48E00E157D6 /* GraphRequest.swift */,
-			);
-			path = FacebookSDK;
-			sourceTree = "<group>";
-		};
 		81F5B41C2139D4A200E157D6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				811A03A02139909C00A2A889 /* AppDelegate.swift */,
-				811A03A22139909C00A2A889 /* ViewController.swift */,
+				811A03A22139909C00A2A889 /* LoginViewController.swift */,
 				813EB1B6213F2E4800307271 /* WelcomeViewController.swift */,
 			);
 			path = Controllers;
@@ -153,7 +142,6 @@
 				811A03992139909C00A2A889 /* Sources */,
 				811A039A2139909C00A2A889 /* Frameworks */,
 				811A039B2139909C00A2A889 /* Resources */,
-				D5C468E4BDCFAEA59A3A3B95 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,30 +222,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D5C468E4BDCFAEA59A3A3B95 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Friends/Pods-Friends-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Friends/Pods-Friends-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -266,9 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				817852DD213FC50500C7C15D /* UIImageView+Extensions.swift in Sources */,
-				811A03A32139909C00A2A889 /* ViewController.swift in Sources */,
+				811A03A32139909C00A2A889 /* LoginViewController.swift in Sources */,
 				813EB1B7213F2E4800307271 /* WelcomeViewController.swift in Sources */,
-				81F5B41B2139D48E00E157D6 /* GraphRequest.swift in Sources */,
 				813EB1B9213F3A1500307271 /* User.swift in Sources */,
 				811A03A12139909C00A2A889 /* AppDelegate.swift in Sources */,
 			);
