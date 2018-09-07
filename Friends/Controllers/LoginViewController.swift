@@ -81,23 +81,5 @@ class LoginViewController: UIViewController, CNContactPickerDelegate, MFMessageC
         
         dismiss(animated: true, completion: nil)
     }
-    
-    /*override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        
-        // push WelcomeViewController only when the facebookLogginButton is on "Log in" Status
-        
-        if identifier == "pushWelcomeViewController" {
-            
-            let buttonStatus = facebookLoginButton.currentTitle
-            
-            if buttonStatus == "Log in" {
-                return true
-            }
-            
-            return false
-        }
-        
-        return true
-    }*/
 }
 
