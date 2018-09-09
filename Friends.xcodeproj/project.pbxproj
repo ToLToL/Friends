@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		67457B39EDF4B668A9F57A90 /* Pods_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12A7A3631812EB687C974982 /* Pods_Friends.framework */; };
+		74C52048214587650015A52C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C52047214587650015A52C /* RoundedButton.swift */; };
+		74C5204A2145885F0015A52C /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C520492145885F0015A52C /* RoundedCorner.swift */; };
 		811A03A12139909C00A2A889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A03A02139909C00A2A889 /* AppDelegate.swift */; };
 		811A03A32139909C00A2A889 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A03A22139909C00A2A889 /* LoginViewController.swift */; };
 		811A03A62139909C00A2A889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A42139909C00A2A889 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		12A7A3631812EB687C974982 /* Pods_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74C52047214587650015A52C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		74C520492145885F0015A52C /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		811A039D2139909C00A2A889 /* Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		811A03A02139909C00A2A889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		811A03A22139909C00A2A889 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +102,8 @@
 		81F5B4172139D42200E157D6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				74C520492145885F0015A52C /* RoundedCorner.swift */,
+				74C52047214587650015A52C /* RoundedButton.swift */,
 				813EB1B8213F3A1500307271 /* FriendsList.swift */,
 				817852DB213FC4E600C7C15D /* Extensions */,
 			);
@@ -251,7 +257,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74C5204A2145885F0015A52C /* RoundedCorner.swift in Sources */,
 				817852DD213FC50500C7C15D /* UIImageView+Extensions.swift in Sources */,
+				74C52048214587650015A52C /* RoundedButton.swift in Sources */,
 				811A03A32139909C00A2A889 /* LoginViewController.swift in Sources */,
 				813EB1B9213F3A1500307271 /* FriendsList.swift in Sources */,
 				811A03A12139909C00A2A889 /* AppDelegate.swift in Sources */,
@@ -401,14 +409,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Friends/Friends.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7P5X39M96P;
+				DEVELOPMENT_TEAM = M6UKFX3V2L;
 				INFOPLIST_FILE = Friends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ToLToL.Friends;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxime.Friends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -422,14 +430,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Friends/Friends.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7P5X39M96P;
+				DEVELOPMENT_TEAM = M6UKFX3V2L;
 				INFOPLIST_FILE = Friends/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ToLToL.Friends;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maxime.Friends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
