@@ -11,7 +11,7 @@ import Firebase
 import ContactsUI
 import MessageUI
 
-class LoginViewController: UIViewController, CNContactPickerDelegate, MFMessageComposeViewControllerDelegate {
+class MainMenuViewController: UIViewController, CNContactPickerDelegate, MFMessageComposeViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()

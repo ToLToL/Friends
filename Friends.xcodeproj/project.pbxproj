@@ -11,7 +11,7 @@
 		74C52048214587650015A52C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C52047214587650015A52C /* RoundedButton.swift */; };
 		74C5204A2145885F0015A52C /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C520492145885F0015A52C /* RoundedCorner.swift */; };
 		811A03A12139909C00A2A889 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A03A02139909C00A2A889 /* AppDelegate.swift */; };
-		811A03A32139909C00A2A889 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A03A22139909C00A2A889 /* LoginViewController.swift */; };
+		811A03A32139909C00A2A889 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811A03A22139909C00A2A889 /* MainMenuViewController.swift */; };
 		811A03A62139909C00A2A889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A42139909C00A2A889 /* Main.storyboard */; };
 		811A03A82139909D00A2A889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A72139909D00A2A889 /* Assets.xcassets */; };
 		811A03AB2139909D00A2A889 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A92139909D00A2A889 /* LaunchScreen.storyboard */; };
@@ -26,7 +26,7 @@
 		74C520492145885F0015A52C /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		811A039D2139909C00A2A889 /* Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Friends.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		811A03A02139909C00A2A889 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		811A03A22139909C00A2A889 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		811A03A22139909C00A2A889 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		811A03A52139909C00A2A889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		811A03A72139909D00A2A889 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		811A03AA2139909D00A2A889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				811A03A02139909C00A2A889 /* AppDelegate.swift */,
-				811A03A22139909C00A2A889 /* LoginViewController.swift */,
+				811A03A22139909C00A2A889 /* MainMenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -260,7 +260,7 @@
 				74C5204A2145885F0015A52C /* RoundedCorner.swift in Sources */,
 				817852DD213FC50500C7C15D /* UIImageView+Extensions.swift in Sources */,
 				74C52048214587650015A52C /* RoundedButton.swift in Sources */,
-				811A03A32139909C00A2A889 /* LoginViewController.swift in Sources */,
+				811A03A32139909C00A2A889 /* MainMenuViewController.swift in Sources */,
 				813EB1B9213F3A1500307271 /* FriendsList.swift in Sources */,
 				811A03A12139909C00A2A889 /* AppDelegate.swift in Sources */,
 			);
