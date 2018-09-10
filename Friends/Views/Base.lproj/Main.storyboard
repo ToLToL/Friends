@@ -28,19 +28,22 @@
                                 <rect key="frame" x="67" y="108" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f9a-dH-vvz" customClass="GIDSignInButton">
-                                <rect key="frame" x="67" y="389" width="240" height="77"/>
+                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f9a-dH-vvz" customClass="GIDSignInButton">
+                                <rect key="frame" x="67" y="389" width="240" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="tappedGoogleSignInButton:" destination="xK3-Sx-Wgk" eventType="valueChanged" id="cli-Vr-NAl"/>
-                                </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Mt-ew-E0Q" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="67" y="490" width="240" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Facebook Login Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="evh-aF-7c2"/>
                     </view>
                     <connections>
+                        <outlet property="FacebookSignInButton" destination="3Mt-ew-E0Q" id="f6x-Qa-TAV"/>
                         <outlet property="GoogleSignInButton" destination="f9a-dH-vvz" id="KTI-68-w65"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToMainMenu" id="5K5-QR-gBJ"/>
                     </connections>
