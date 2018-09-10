@@ -15,7 +15,7 @@
         <!--Login View Controller-->
         <scene sceneID="TbH-t6-M4u">
             <objects>
-                <viewController id="xK3-Sx-Wgk" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="xK3-Sx-Wgk" customClass="LoginViewController" customModule="Friends" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ytO-Q9-3fg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,10 +28,22 @@
                                 <rect key="frame" x="67" y="108" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f9a-dH-vvz" customClass="GIDSignInButton">
+                                <rect key="frame" x="67" y="389" width="240" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="tappedGoogleSignInButton:" destination="xK3-Sx-Wgk" eventType="valueChanged" id="cli-Vr-NAl"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="evh-aF-7c2"/>
                     </view>
+                    <connections>
+                        <outlet property="GoogleSignInButton" destination="f9a-dH-vvz" id="KTI-68-w65"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToMainMenu" id="5K5-QR-gBJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Wa-p5-PQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

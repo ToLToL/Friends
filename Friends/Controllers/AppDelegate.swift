@@ -8,17 +8,52 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+    
 
     var window: UIWindow?
-
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        
+        if let error = error {
+            print("Authentication error: \(error.localizedDescription)")
+            return
+        }
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
+        
+        // When user is signed in
+        Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
+            
+            self.window?.rootViewController?.performSegue(withIdentifier: "goToMainMenu", sender: LoginViewController.self)
+            if let error = error {
+                print("Login error: \(error.localizedDescription)")
+                return
+            }
+            print("User's name: \(user?.user.displayName ?? "")")
+            print("User's phone number: \(user?.user.phoneNumber ?? "")")
+            print("User's uid: \(user!.user.uid)")
+            print("User's mail: \(user!.user.email!)")
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url,
+                                                 sourceApplication: sourceApplication,
+                                                 annotation: annotation)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {

@@ -7,6 +7,8 @@ target 'Friends' do
 
   # Pods for Friends
 
-pod 'Firebase/Core'
+	pod 'Firebase/Core'
+	pod 'Firebase/Auth'
+	pod 'GoogleSignIn'
 
 end

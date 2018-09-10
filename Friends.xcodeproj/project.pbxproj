@@ -15,6 +15,7 @@
 		811A03A62139909C00A2A889 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A42139909C00A2A889 /* Main.storyboard */; };
 		811A03A82139909D00A2A889 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A72139909D00A2A889 /* Assets.xcassets */; };
 		811A03AB2139909D00A2A889 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811A03A92139909D00A2A889 /* LaunchScreen.storyboard */; };
+		8125738D2146FCBE00606EFD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8125738C2146FCBE00606EFD /* LoginViewController.swift */; };
 		813EB1B9213F3A1500307271 /* FriendsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813EB1B8213F3A1500307271 /* FriendsList.swift */; };
 		817852DD213FC50500C7C15D /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817852DC213FC50500C7C15D /* UIImageView+Extensions.swift */; };
 		81FC411B21406F230042A7B0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 81FC411A21406F230042A7B0 /* GoogleService-Info.plist */; };
@@ -32,6 +33,7 @@
 		811A03AA2139909D00A2A889 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		811A03AC2139909D00A2A889 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		811A03B221399E3D00A2A889 /* Friends.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Friends.entitlements; sourceTree = "<group>"; };
+		8125738C2146FCBE00606EFD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		813EB1B8213F3A1500307271 /* FriendsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsList.swift; sourceTree = "<group>"; };
 		817852DC213FC50500C7C15D /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		81FC411A21406F230042A7B0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				811A03A02139909C00A2A889 /* AppDelegate.swift */,
+				8125738C2146FCBE00606EFD /* LoginViewController.swift */,
 				811A03A22139909C00A2A889 /* MainMenuViewController.swift */,
 			);
 			path = Controllers;
@@ -149,6 +152,7 @@
 				811A039A2139909C00A2A889 /* Frameworks */,
 				811A039B2139909C00A2A889 /* Resources */,
 				9FF8DD7C94B9C6138439E813 /* [CP] Embed Pods Frameworks */,
+				76966653C5B214AFE4DB0937 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +234,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		76966653C5B214AFE4DB0937 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Friends/Pods-Friends-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Friends/Pods-Friends-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9FF8DD7C94B9C6138439E813 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -237,11 +259,17 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Friends/Pods-Friends-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -257,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8125738D2146FCBE00606EFD /* LoginViewController.swift in Sources */,
 				74C5204A2145885F0015A52C /* RoundedCorner.swift in Sources */,
 				817852DD213FC50500C7C15D /* UIImageView+Extensions.swift in Sources */,
 				74C52048214587650015A52C /* RoundedButton.swift in Sources */,
@@ -416,7 +445,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.maxime.Friends;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ToLToL.Friends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -437,7 +466,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.maxime.Friends;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ToLToL.Friends;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
