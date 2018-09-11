@@ -43,26 +43,26 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
             
             // If Sign in is selected
             if isSignIn {
-                Auth.auth().signIn(withEmail: mail, password: password) { (result, error) in
+                Auth.auth().signIn(withEmail: mail, password: password) { (user, error) in
                     
-                    if let user = result {
+                    if user != nil {
                         
                         self.performSegue(withIdentifier: "goToMainMenu", sender: self)
                     } else {
-                        print("Sign in error: \(error)")
+                        print("Sign in error: \(String(describing: error))")
                     }
                 }
             }
                 
             // If Resgister is selected
             else {
-                Auth.auth().createUser(withEmail: mail, password: password) { (result, error) in
+                Auth.auth().createUser(withEmail: mail, password: password) { (user, error) in
                     
-                    if let user = result {
+                    if user != nil {
                         
                         self.performSegue(withIdentifier: "goToMainMenu", sender: self)
                     } else {
-                        print("Resgister error: \(error)")
+                        print("Resgister error: \(String(describing: error))")
                     }
                 }
                 
