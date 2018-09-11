@@ -82,13 +82,16 @@
                                                 <rect key="frame" x="93.666666666666657" y="0.0" width="281.33333333333337" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SyQ-cA-KLK">
                                         <rect key="frame" x="164" y="228.33333333333331" width="47" height="30"/>
                                         <state key="normal" title="Sign in"/>
+                                        <connections>
+                                            <action selector="tappedSignInRegisterButton:" destination="xK3-Sx-Wgk" eventType="touchUpInside" id="G5K-or-acf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

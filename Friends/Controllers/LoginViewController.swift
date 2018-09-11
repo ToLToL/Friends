@@ -33,7 +33,43 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
             signInLabel.text = "Register"
             signInButton.setTitle("Register", for: .normal)
         }
+        emailTextField.text = ""
+        passwordTextField.text = ""
     }
+    
+    @IBAction func tappedSignInRegisterButton(_ sender: Any) {
+        
+        if let mail = emailTextField.text, let password = passwordTextField.text {
+            
+            // If Sign in is selected
+            if isSignIn {
+                Auth.auth().signIn(withEmail: mail, password: password) { (result, error) in
+                    
+                    if let user = result {
+                        
+                        self.performSegue(withIdentifier: "goToMainMenu", sender: self)
+                    } else {
+                        print("Sign in error: \(error)")
+                    }
+                }
+            }
+                
+            // If Resgister is selected
+            else {
+                Auth.auth().createUser(withEmail: mail, password: password) { (result, error) in
+                    
+                    if let user = result {
+                        
+                        self.performSegue(withIdentifier: "goToMainMenu", sender: self)
+                    } else {
+                        print("Resgister error: \(error)")
+                    }
+                }
+                
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
