@@ -20,5 +20,14 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance().signOut()
     }
     
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        
+        performSegue(withIdentifier: "goToMainMenu", sender: self)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        
+        performSegue(withIdentifier: "goToMainMenu", sender: self)
+    }
     @IBOutlet weak var GoogleSignInButton: GIDSignInButton!
 }

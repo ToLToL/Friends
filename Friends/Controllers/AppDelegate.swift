@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             print("Authentication error: \(error.localizedDescription)")
             return
         }
-        guard let authentication = user.authentication else { return }
         
-        self.window?.rootViewController?.performSegue(withIdentifier: "goToMainMenu", sender: LoginViewController.self)
+        window?.rootViewController?.performSegue(withIdentifier: "goToMainMenu", sender: self)
+        guard let authentication = user.authentication else { return }
         let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
         
         Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
