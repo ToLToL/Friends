@@ -9,9 +9,8 @@
 import UIKit
 import Firebase
 import GoogleSignIn
-import FBSDKLoginKit
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate, FBSDKLoginButtonDelegate {
+class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,21 +20,5 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate, FBSDKLoginButt
         GIDSignIn.sharedInstance().signOut()
     }
     
-    @IBOutlet weak var FacebookSignInButton: FBSDKLoginButton!
     @IBOutlet weak var GoogleSignInButton: GIDSignInButton!
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        
-        if error != nil {
-            print(error)
-            return
-        }
-        
-        print("Successfully logged in with Facebook")
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
-        print("Did log out of Facebook")
-    }
 }

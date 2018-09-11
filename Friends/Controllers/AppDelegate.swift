@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FBSDKLoginKit
 import Firebase
 import GoogleSignIn
 
@@ -26,11 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
             return
         }
         guard let authentication = user.authentication else { return }
+        
+        self.window?.rootViewController?.performSegue(withIdentifier: "goToMainMenu", sender: LoginViewController.self)
         let credential = GoogleAuthProvider.credential(withIDToken: (authentication.idToken)!, accessToken: (authentication.accessToken)!)
         
         Auth.auth().signInAndRetrieveData(with: credential) { (user, error) in
             
-            self.window?.rootViewController?.performSegue(withIdentifier: "goToMainMenu", sender: LoginViewController.self)
             if let error = error {
                 print("Login error: \(error.localizedDescription)")
                 return
@@ -51,17 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-        
         return true
-    }
-    
-    //MARK: - Facebook Application -
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        
-        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as! String, annotation: options[UIApplicationOpenURLOptionsKey.annotation])
-        
-        return handled
     }
     
     //MARK: - Google Application -
