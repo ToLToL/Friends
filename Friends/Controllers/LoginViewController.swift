@@ -12,6 +12,28 @@ import GoogleSignIn
 
 class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
+    @IBOutlet weak var signInSelector: UISegmentedControl!
+    @IBOutlet weak var signInLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
+    
+    var isSignIn: Bool = true
+    
+    @IBAction func tappedSignInSelector(_ sender: UISegmentedControl) {
+        
+        isSignIn = !isSignIn
+        
+        if isSignIn {
+            signInLabel.text = "Sign in"
+            signInButton.setTitle("Sign in", for: .normal)
+        } else {
+            signInLabel.text = "Register"
+            signInButton.setTitle("Register", for: .normal)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
